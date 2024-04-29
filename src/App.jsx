@@ -22,6 +22,7 @@ const App = () => {
       return "";
     }
   };
+  const url = "http://localhost:1000"
   const [user, setuser] = useState(false);
   const [admin, setadmin] = useState(false);
   const [logininput, setlogininput] = useState({ email: "", password: "" });
@@ -42,7 +43,7 @@ const App = () => {
  
   useEffect(() => {
     const fetchUser = async () => {
-      const api = await axios.get("http://localhost:1000/api/users", {
+      const api = await axios.get(`${url}/api/users`, {
         headers: { "Content-Type": "application/json"," auth": token },
         withCredentials: true,
       });
@@ -82,16 +83,13 @@ const App = () => {
 
   useEffect(() => {
     const fetchLeavedata = async () => {
-      const api = await axios.get("http://localhost:1000/api/leave", {
-        headers: { "Content-Type": "application/json", auth: token },
-        withCredentials: true,
-      });
-
-      
+      const api = await axios.get(`${url}/api/users/leave`,
+        {
+          headers: { "Content-Type": "application/json", auth: token },
+          withCredentials: true,
+        }
+      );
       setleaveData(api.data.data);
-      
-   
-
     };
   
     fetchLeavedata();
@@ -115,6 +113,7 @@ const App = () => {
             path="/login"
             element={
               <Login
+              url={url}
                 logininput={logininput}
                 setlogininput={setlogininput}
                 settoken={settoken}
@@ -138,13 +137,14 @@ const App = () => {
               />
             }
           />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Signup url={url} />} />
           {/* <Route path="/admin" element={<Admin />} />
           <Route path="/admin" element={<Admin />} /> */}
           <Route
             path="/applyLeaves"
             element={
               <ApplyLeave
+              url={url}
                 token={token}
                 leaveinput={leaveinput}
                 setleaveinput={setleaveinput}
@@ -158,6 +158,7 @@ const App = () => {
             path="/viewLeaves"
             element={
               <ViewLeave
+              url={url}
                 token={token}
                 leaveData={leaveData}
                 userId={userId}
@@ -174,6 +175,7 @@ const App = () => {
             path="/users"
             element={
               <ManageUser
+              url={url}
                 alluserdetails={alluserdetails}
                 admin={admin}
                 setflage={setflage}

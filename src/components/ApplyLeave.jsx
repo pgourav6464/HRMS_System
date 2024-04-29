@@ -5,7 +5,7 @@ import axios from 'axios';
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ApplyLeave = ({ token, setleaveinput, leaveinput , flage,setflage , userId }) => {
+const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , userId }) => {
   // console.log(token)
 
   const handler = (e)=>{
@@ -26,15 +26,22 @@ const ApplyLeave = ({ token, setleaveinput, leaveinput , flage,setflage , userId
     userId
   )=>{
 
-    const api = await axios.post("http://localhost:1000/api/leave", {
-      lname,
-      lnumber,
-      lreason,
-      ldate,
-      lenddate,
-      status,
-      userId,
-    } ,{headers:{"Content-Type":"application/json" ,"auth":token} ,withCredentials:true});
+    const api = await axios.post(
+      `${url}/api/users/leave`,
+      {
+        lname,
+        lnumber,
+        lreason,
+        ldate,
+        lenddate,
+        status,
+        userId,
+      },
+      {
+        headers: { "Content-Type": "application/json", auth: token },
+        withCredentials: true,
+      }
+    );
 
   }
 

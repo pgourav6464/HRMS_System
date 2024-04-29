@@ -15,6 +15,7 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ViewLeave({
+  url,
   leaveData,
   userId,
   flage,
@@ -35,7 +36,7 @@ export default function ViewLeave({
   }, [leaveData , flage]);
 
   const cancelrequest = async (id) => {
-    const api = await axios.delete(`http://localhost:1000/api/leave/${id}`, {
+    const api = await axios.delete(`${url}/api/leave/${id}` , {
       headers: { "Content-Type": "application/json", auth: token },
       withCredentials: true,
     });
@@ -58,7 +59,7 @@ export default function ViewLeave({
   useEffect(() => {
     const changeNumber = async (id, Available,  Accepted,Rejected) => {           
       const api = await axios.put(
-        `http://localhost:1000/api/users/${id}`,
+        `${url}/api/users/${id}`,
         { Accepted, Available, Rejected },
         {
           headers: { "Content-Type": "application/json", auth: token },

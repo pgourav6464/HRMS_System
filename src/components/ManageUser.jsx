@@ -14,7 +14,7 @@ import { useEffect } from "react";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ManageUser = ({alluserdetails, admin, setflage, flage, token}) => {
+const ManageUser = ({alluserdetails, admin, setflage, flage, token , url}) => {
 //   console.log(flage);
   const [name, setname] = useState("");
   const [email, setemail] = useState("");
@@ -43,7 +43,7 @@ const ManageUser = ({alluserdetails, admin, setflage, flage, token}) => {
 // edit user
   const editUser = async (id, name, username, email, Available, Total) => {
     const api = await axios.put(
-      `http://localhost:1000/api/users/${id}`,
+      `${url}/api/users/${id}`,
       { name, username, email, Available, Total },
       {
         headers: { "Content-Type": "application/json", auth: token },
@@ -68,13 +68,10 @@ const ManageUser = ({alluserdetails, admin, setflage, flage, token}) => {
 
 //   delete user
   const deleteUser = async (id) => {
-    const api = await axios.delete(
-      `http://localhost:1000/api/users/${id}`,
-      {
-        headers: { "Content-Type": "application/json", auth: token },
-        withCredentials: true,
-      }
-    );
+    const api = await axios.delete(`${url}/api/users/${id}`, {
+      headers: { "Content-Type": "application/json", auth: token },
+      withCredentials: true,
+    });
     // console.log(api);
     toast.success(api.data.message, {
       position: "top-right",
@@ -104,12 +101,10 @@ const ManageUser = ({alluserdetails, admin, setflage, flage, token}) => {
   };
 
   const editSubmit = () => {
-    
     editUser(userid, name, username, email, Available, Total);
     setopen(false);
     setUserid("")
- 
-    
+  
   };
 //   console.log(flage)
   const edithandle = (id) => {

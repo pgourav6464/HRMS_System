@@ -7,7 +7,7 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-const Login = ({ logininput, setlogininput, token, settoken ,admin,setadmin,user,setuser , flage , setflage }) => {
+const Login = ({ url, logininput, setlogininput, token, settoken ,admin,setadmin,user,setuser , flage , setflage }) => {
   const navigate = useNavigate()
   const [loader, setloader] = useState(false)
 
@@ -24,7 +24,7 @@ const Login = ({ logininput, setlogininput, token, settoken ,admin,setadmin,user
     setloader(true)
 
     const api = await axios.post(
-      "http://localhost:1000/api/login",
+      `${url}/api/login`,
       { username, email, password },
       { headers: { "Content-Type": "application/json" }, withCredentials: true }
     );

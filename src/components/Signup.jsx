@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router-dom';
  
 
-const Signup = () => {
+const Signup = ({url}) => {
  const navigate = useNavigate()
   const [loader, setloader] = useState(false);
   const [signupinput, setsignupinput] = useState({name:"" , username:"" , email:"" ,password:"" , isType:"user"})
@@ -23,6 +23,7 @@ const Signup = () => {
       email,
       password,
       isType,
+      
    
     ) => {
       if (name == "" || username == "" || email == "" || password == "") {
@@ -40,14 +41,13 @@ const Signup = () => {
       } else {
        setloader(true)
         const api = await axios.post(
-          "http://localhost:1000/api/register",
+         `${url}/api/register`,
           {
             name,
             username,
             email,
             password,
             isType,
-          
           },
           {
             headers: { "Content-Type": "application/json" },

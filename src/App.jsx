@@ -83,7 +83,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchLeavedata = async () => {
-      const api = await axios.get(`${url}/api/users/leave`,
+      const api = await axios.get(`${url}/api/leave`,
         {
           headers: { "Content-Type": "application/json", auth: token },
           withCredentials: true,

@@ -27,7 +27,7 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
   )=>{
 
     const api = await axios.post(
-      `${url}/api/users/leave`,
+      `${url}/api/leave`,
       {
         lname,
         lnumber,

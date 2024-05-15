@@ -95,6 +95,7 @@ const Login = ({ url, logininput, setlogininput, token, settoken ,admin,setadmin
             name="email"
             value={logininput.email}
             onChange={onchangehandeler}
+            size="small"
           />
           <TextField
             // required
@@ -103,6 +104,7 @@ const Login = ({ url, logininput, setlogininput, token, settoken ,admin,setadmin
             type="Password"
             value={logininput.password}
             onChange={onchangehandeler}
+            size="small"
           />
           {/* <input /> */}
           {/* <h1>password</h1> */}
@@ -114,15 +116,15 @@ const Login = ({ url, logininput, setlogininput, token, settoken ,admin,setadmin
               color="secondary"
             >
               {" "}
-            
-              <CircularProgress  sx={{ color: "White" , fontSize:"10px" }}  />
+              <CircularProgress sx={{ color: "White", fontSize: "10px" }} />
             </Button>
           ) : (
             <Button
-            sx={{padding:"15px"}}
+              sx={{ padding: "15px" }}
               onClick={onsubmithandler}
               variant="contained"
               color="secondary"
+              size="small"
             >
               Login
             </Button>

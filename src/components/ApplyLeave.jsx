@@ -83,7 +83,8 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
               <Typography variant="h3" color={"secondary"}>
                 Apply Leaves
               </Typography>
-              <form onSubmit={handlesubmit}
+              <form
+                onSubmit={handlesubmit}
                 action=""
                 className=" d-flex justify-content-center align-items-center flex-column mt-3  gap-3  "
               >
@@ -93,6 +94,7 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
                   onChange={handler}
                   value={leaveinput.lname}
                   sx={{ width: "400px" }}
+                  size="small"
                 />
                 <TextField
                   label={"Number"}
@@ -100,8 +102,10 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
                   name="lnumber"
                   onChange={handler}
                   value={leaveinput.lnumber}
+                  size="small"
                 />
                 <TextField
+                  size="small"
                   label={"Reason"}
                   sx={{ width: "400px" }}
                   name="lreason"
@@ -109,14 +113,20 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
                   value={leaveinput.lreason}
                 />
                 <TextField
+                  size="small"
                   sx={{ width: "400px" }}
+                  label="start date"
+                  focused
                   type="date"
                   name="ldate"
                   onChange={handler}
                   value={leaveinput.ldate}
                 />
                 <TextField
-                  placeholder="EndDAte"
+                  label="End date"
+                  focused
+                  size="small"
+                  // placeholder="EndDAte"
                   sx={{ width: "400px" }}
                   type="date"
                   name="lenddate"
@@ -124,7 +134,8 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
                   value={leaveinput.lenddate}
                 />
                 <Button
-                onClick={handlesubmit}
+                  size="small"
+                  onClick={handlesubmit}
                   variant="contained"
                   color="secondary"
                   sx={{ width: "400px" }}

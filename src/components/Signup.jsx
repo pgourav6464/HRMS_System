@@ -114,6 +114,7 @@ const Signup = ({url}) => {
             Create Account
           </Typography>
           <TextField
+            size="small"
             // required
             // sx={{ width: "300px" }}
             label=" Name"
@@ -124,6 +125,7 @@ const Signup = ({url}) => {
           />
           <TextField
             // required
+            size="small"
             label="UserName"
             name="username"
             type="text"
@@ -135,6 +137,7 @@ const Signup = ({url}) => {
           {/* <input /> */}
 
           <TextField
+            size="small"
             label="Email"
             type="email"
             name="email"
@@ -147,6 +150,7 @@ const Signup = ({url}) => {
             name="password"
             value={signupinput.password}
             onChange={onchangehandeler}
+            size="small"
           />
 
           {loader ? (
@@ -159,8 +163,9 @@ const Signup = ({url}) => {
               variant="contained"
               color="primary"
               sx={{ padding: "15px" }}
+              size="small"
             >
-              Login
+              signup
             </Button>
           )}
         </form>

@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginFirst from './LoginFirst'
-import { Button, TextField, Typography  } from "@mui/material"
+import { Button, TextField, Typography ,Box  } from "@mui/material"
 import axios from 'axios';
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -80,69 +80,71 @@ const ApplyLeave = ({url, token, setleaveinput, leaveinput , flage,setflage , us
         {token && (
           <>
             <div className="leaveform  d-flex justify-content-center align-items-center flex-column mt-3 ">
-              <Typography variant="h3" color={"secondary"}>
-                Apply Leaves
-              </Typography>
-              <form
-                onSubmit={handlesubmit}
-                action=""
-                className=" d-flex justify-content-center align-items-center flex-column mt-3  gap-3  "
-              >
-                <TextField
-                  label={"Name"}
-                  name="lname"
-                  onChange={handler}
-                  value={leaveinput.lname}
-                  sx={{ width: "400px" }}
-                  size="small"
-                />
-                <TextField
-                  label={"Number"}
-                  sx={{ width: "400px" }}
-                  name="lnumber"
-                  onChange={handler}
-                  value={leaveinput.lnumber}
-                  size="small"
-                />
-                <TextField
-                  size="small"
-                  label={"Reason"}
-                  sx={{ width: "400px" }}
-                  name="lreason"
-                  onChange={handler}
-                  value={leaveinput.lreason}
-                />
-                <TextField
-                  size="small"
-                  sx={{ width: "400px" }}
-                  label="start date"
-                  focused
-                  type="date"
-                  name="ldate"
-                  onChange={handler}
-                  value={leaveinput.ldate}
-                />
-                <TextField
-                  label="End date"
-                  focused
-                  size="small"
-                  // placeholder="EndDAte"
-                  sx={{ width: "400px" }}
-                  type="date"
-                  name="lenddate"
-                  onChange={handler}
-                  value={leaveinput.lenddate}
-                />
-                <Button
-                  size="small"
-                  onClick={handlesubmit}
-                  variant="contained"
-                  color="secondary"
-                  sx={{ width: "400px" }}
+              <Box className="  border p-5 ">
+                <Typography variant="h3" textAlign={"center"} color={"secondary"}>
+                  Apply Leaves
+                </Typography>
+                <form
+                  onSubmit={handlesubmit}
+                  action=""
+                  className=" d-flex justify-content-center align-items-center flex-column mt-3  gap-3  "
                 >
-                  Submit
-                </Button>
-              </form>
+                  <TextField
+                    label={"Name"}
+                    name="lname"
+                    onChange={handler}
+                    value={leaveinput.lname}
+                    sx={{ width: { xs: "100%", md: "400px" } }}
+                    size="small"
+                  />
+                  <TextField
+                    label={"Number"}
+                    sx={{ width: { xs: "100%", md: "400px" } }}
+                    name="lnumber"
+                    onChange={handler}
+                    value={leaveinput.lnumber}
+                    size="small"
+                  />
+                  <TextField
+                    size="small"
+                    label={"Reason"}
+                    sx={{ width: { xs: "100%", md: "400px" } }}
+                    name="lreason"
+                    onChange={handler}
+                    value={leaveinput.lreason}
+                  />
+                  <TextField
+                    size="small"
+                    sx={{ width: { xs: "100%", md: "400px" } }}
+                    label="start date"
+                    focused
+                    type="date"
+                    name="ldate"
+                    onChange={handler}
+                    value={leaveinput.ldate}
+                  />
+                  <TextField
+                    label="End date"
+                    focused
+                    size="small"
+                    // placeholder="EndDAte"
+                    sx={{ width: { xs: "100%", md: "400px" } }}
+                    type="date"
+                    name="lenddate"
+                    onChange={handler}
+                    value={leaveinput.lenddate}
+                  />
+                  <Button
+                    size="small"
+                    onClick={handlesubmit}
+                    variant="contained"
+                    color="secondary"
+                    sx={{ width: { xs: "100%", sm: "400px" } }}
+                  >
+                    Submit
+                  </Button>
+                </form>
+              </Box>
             </div>
           </>
         )}

@@ -23,6 +23,7 @@ const App = () => {
     }
   };
   const url = "https://hrms-server-hmfr.onrender.com"
+  // const url = "http://localhost:1000";
   const [user, setuser] = useState(false);
   const [admin, setadmin] = useState(false);
   const [logininput, setlogininput] = useState({ email: "", password: "" });

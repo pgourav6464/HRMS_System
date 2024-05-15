@@ -6,13 +6,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Button, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import axios from "axios";
 import LoginFirst from "./LoginFirst";
 import { useState } from "react";
 import { useEffect } from "react";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 
 export default function ViewLeave({
   url,
@@ -142,12 +143,12 @@ export default function ViewLeave({
       {user && (
         <>
           <Typography align="center" variant="h3" sx={{ margin: "30px" }}>
-            Views Leaves Application
+            Views Leaves Application 
           </Typography>
 
           {/*  */}
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+          <TableContainer component={Paper} >
+            <Table sx={{ minWidth: 650  }} aria-label="simple table">
               <TableHead>
                 <TableRow>
                   <TableCell align="center">
@@ -250,27 +251,29 @@ export default function ViewLeave({
                         <TableCell align="center">{row.lenddate}</TableCell>
                         <TableCell align="center">{row.status}</TableCell>
                         <TableCell align="center">
-                          <Button
-                            sx={{ marginRight: "10px" }}
-                            color="success"
-                            size="small"
-                            variant="outlined"
-                            onClick={() =>
-                              editLeave(row._id, "Approved", row.userId)
-                            }
-                          >
-                            Approve
-                          </Button>
-                          <Button
-                            color="error"
-                            variant="outlined"
-                            size="small"
-                            onClick={() =>
-                              editLeave(row._id, "Rjected", row.userId)
-                            }
-                          >
-                            Reject
-                          </Button>
+                          <Box className="d-flex">
+                            <Button
+                              sx={{ marginRight: "10px" }}
+                              color="success"
+                              size="small"
+                              variant="outlined"
+                              onClick={() =>
+                                editLeave(row._id, "Approved", row.userId)
+                              }
+                            >
+                              Approve
+                            </Button>
+                            <Button
+                              color="error"
+                              variant="outlined"
+                              size="small"
+                              onClick={() =>
+                                editLeave(row._id, "Rjected", row.userId)
+                              }
+                            >
+                              Reject
+                            </Button>
+                          </Box>
                         </TableCell>
                       </TableRow>
                     ))}

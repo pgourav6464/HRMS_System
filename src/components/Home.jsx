@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardActionArea, CardActions } from "@mui/material"
+import { Box, Card, CardActionArea, CardActions } from "@mui/material"
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -19,52 +19,70 @@ const Home = ({ alluserdetails ,userId ,user }) => {
           {userLeaveCount.length > 0 && (
             <>
               <div className="cardcontainer mt-3 ">
-                <div className="cards d-flex justify-content-center align-items-center  gap-3 ">
-                  <Card variant="outlined" sx={{ width: "300px" }}>
+                <Box
+                  className="cards d-flex flex-wrap justify-content-center align-items-center
+                  gap-3 "
+                >
+                  <Card
+                    variant="outlined"
+                    sx={{ width: { xs: "150px", md: "300px" } }}
+                  >
                     <CardActionArea>
                       <CardActions
-                        sx={{ height: "200px" }}
+                        sx={{ height: "150px" }}
                         className="d-flex flex-column justify-content-center gap-2 "
                       >
-                        <h2>Total Leaves</h2>
+                        <h2 style={{ textAlign: "center" }}>Total Leaves</h2>
                         <h3>{userLeaveCount[0].Total}</h3>
                       </CardActions>
                     </CardActionArea>
                   </Card>
-                  <Card variant="outlined" sx={{ width: "300px" }}>
+
+                  <Card
+                    variant="outlined"
+                    sx={{ width: { xs: "150px", md: "300px" } }}
+                  >
                     <CardActionArea>
                       <CardActions
-                        sx={{ height: "200px" }}
+                        sx={{ height: "150px" }}
                         className="d-flex flex-column justify-content-center gap-2 "
                       >
-                        <h2>Available Leaves</h2>
+                        <h2 style={{ textAlign: "center" }}>
+                          Available Leaves
+                        </h2>
                         <h3>{userLeaveCount[0].Available}</h3>
                       </CardActions>
                     </CardActionArea>
                   </Card>
-                  <Card variant="outlined" sx={{ width: "300px" }}>
+                  <Card
+                    variant="outlined"
+                    sx={{ width: { xs: "150px", md: "300px" } }}
+                  >
                     <CardActionArea>
                       <CardActions
-                        sx={{ height: "200px" }}
+                        sx={{ height: "150px" }}
                         className="d-flex flex-column justify-content-center gap-2 "
                       >
-                        <h2>Accepted Leaves</h2>
+                        <h2 style={{ textAlign: "center" }}>Accepted Leaves</h2>
                         <h3>{userLeaveCount[0].Accepted}</h3>
                       </CardActions>
                     </CardActionArea>
                   </Card>
-                  <Card variant="outlined" sx={{ width: "300px" }}>
+                  <Card
+                    variant="outlined"
+                    sx={{ width: { xs: "150px", md: "300px" } }}
+                  >
                     <CardActionArea>
                       <CardActions
-                        sx={{ height: "200px" }}
+                        sx={{ height: "150px" }}
                         className="d-flex flex-column justify-content-center gap-2 "
                       >
-                        <h2>Rejected Leave</h2>
+                        <h2 style={{ textAlign: "center" }}>Rejected Leave</h2>
                         <h3>{userLeaveCount[0].Rejected}</h3>
                       </CardActions>
                     </CardActionArea>
                   </Card>
-                </div>
+                </Box>
               </div>
             </>
           )}

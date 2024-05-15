@@ -169,25 +169,25 @@ const ManageUser = ({alluserdetails, admin, setflage, flage, token , url}) => {
                         <TableCell align="center">{row.Available}</TableCell>
 
                         <TableCell align="center">
-                          <Button
-                            sx={{ marginRight: "10px" }}
-                            color="warning"
-                            size="small"
-                            variant="contained"
-                            onClick={() => edithandle(row._id)}
-                          >
-                            Edit
-                          </Button>
-                          <Button
-                            color="error"
-                            variant="contained"
-                            size="small"
-                            onClick={() =>
-                              deleteUser(row._id)
-                            }
-                          >
-                            Delete
-                          </Button>
+                          <Box className=" d-flex">
+                            <Button
+                              sx={{ marginRight: "10px" }}
+                              color="warning"
+                              size="small"
+                              variant="contained"
+                              onClick={() => edithandle(row._id)}
+                            >
+                              Edit
+                            </Button>
+                            <Button
+                              color="error"
+                              variant="contained"
+                              size="small"
+                              onClick={() => deleteUser(row._id)}
+                            >
+                              Delete
+                            </Button>
+                          </Box>
                         </TableCell>
                       </TableRow>
                     ))}

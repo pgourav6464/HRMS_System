@@ -162,8 +162,8 @@ const Signup = ({url}) => {
               onClick={onsubmithandler}
               variant="contained"
               color="primary"
-              sx={{ padding: "15px" }}
-              size="small"
+              // sx={{ padding: "15px" }}
+              // size="small"
             >
               signup
             </Button>

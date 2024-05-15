@@ -114,17 +114,18 @@ const Login = ({ url, logininput, setlogininput, token, settoken ,admin,setadmin
               // onClick={onsubmithandler}
               variant="contained"
               color="secondary"
+              size="small"
             >
               {" "}
               <CircularProgress sx={{ color: "White", fontSize: "10px" }} />
             </Button>
           ) : (
             <Button
-              sx={{ padding: "15px" }}
+              // sx={{ padding: "15px" }}
               onClick={onsubmithandler}
               variant="contained"
               color="secondary"
-              size="small"
+              // size="small"
             >
               Login
             </Button>

@@ -41,6 +41,12 @@ h5{
 .home{
     height: 80vh;
 }
+@media(max-width:650px){
+    .home img{
+    width:350px
+}
+
+}
 
 .cardcontainer{
     /* position:absolute; */

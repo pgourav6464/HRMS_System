@@ -98,7 +98,7 @@ export default function ViewLeave({
      setud(uud);
      setstatus(status)
      const api = await axios.put(
-       `http://localhost:1000/api/leave/${id}`,
+       `${url}/api/leave/${id}`,
        { status },
        {
          headers: { "Content-Type": "application/json", auth: token },
